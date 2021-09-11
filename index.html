@@ -1,0 +1,157 @@
+<!DOCTYPE html >
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="main.js"></script>
+    <script>
+        function size() {
+            const selectedFile = document.getElementById('file').files[0];
+            console.log(selectedFile);
+        }
+    </script>
+    <title>Веб-сайт</title>
+</head>
+
+<body>
+
+    <!-- NavigationBar-->
+    <section class="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> Jane Doe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tell us about yourself</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Slider</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+
+    <!-- NavigationBar_End-->
+
+
+    <!--General info-->
+
+    <div class="geninfo">
+        <div class="main_image">
+            <img src="/img/main_photo.jpg" alt="" class="main_image__photo">
+        </div>
+        <div class="geninfo__text">
+            <div class="geninf__text__shotrinfo">
+                <div class="geninf__text__shotrinfo__header">
+                    Jane Doe
+                </div>
+                <div class="geninf__text__shotrinfo__info">
+                    <dl>
+                        <dt class="geninf__text__shotrinfo__info__dt">
+                            Date of birth
+                        </dt>
+                        <dd class="geninf__text__shotrinfo__info__dd">
+                            21.04.2001
+                        </dd>
+                        <dt class="geninf__text__shotrinfo__info__dt">
+                            Gender
+                        </dt>
+                        <dd class="geninf__text__shotrinfo__info__dd">
+                            Female
+                        </dd>
+                        <dt class="geninf__text__shotrinfo__info__dt">
+                            Date of birth
+                        </dt>
+                        <dd class="geninf__text__shotrinfo__info__dd">
+                            Corea
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="geninfo__text__fullinfo">
+                <div class="geninfo__text__fullinfo_header">
+                    About me
+                </div>
+                <div class="geninfo__text__fullinfo_main_text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--General info end-->
+
+    <!--Tell Us-->
+    <section class="tell_us">
+        <div class="tell_us__header">
+            Tell us about yourself
+        </div>
+        <form action="" class="tell_us_data__form" method="POST">
+            <div class="tell_us_data__form__item">
+                <label for="name" class="tell_us_data__form__item__label">
+                    Your name
+                </label>
+                <input type="text" class="default_text" id="name" name="user_name" placeholder="Tell us your name">
+            </div>
+            <div class="tell_us_data__form__item">
+                <label for="gender" class="tell_us_data__form__item__label">
+                    Your gender
+                </label>
+                <select class=tell_us_data__form__item__gender name="gender">   
+                    <option value="not_given"disabled selected>Сhoose Your Gender</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                   </select>
+            </div>
+        </form>
+        <form action="" class="tell_us_data__form" method="POST">
+            <div class="tell_us_data__form__item">
+                <label for="country" class="tell_us_data__form__item__label">
+                   Your country
+                </label>
+                <input type="text" class="default_text" id="country" name="user_country" placeholder="Where are you from?">
+            </div>
+            <div class="tell_us_data__form__item">
+                <label for="city" class="tell_us_data__form__item__label">
+                   Your city
+                </label>
+                <input type="text" class="default_text" id="city" name="user_city" placeholder="Your native city">
+
+            </div>
+            <div class="tell_us_data__form__item">
+                <label for="birhday" class="tell_us_data__form__item__label">
+                    Your date of birth
+                </label>
+                <input type="date" class="default_date" id="date" name="user_date" placeholder="dd.mm.yyyy">
+            </div>
+        </form>
+        <form action="" class="tell_us_data__form" method="POST">
+            <div class="tell_us_data__form__documents">
+                <label for="file-input">Proof your identity with some documents</label>
+                <label class="tell_us_data__form__documents__label">
+                    Add document
+                    <input type="file" id="file"  onchange="size();" name="user_document" />
+                </label>
+            </div>
+        </form>
+        <div class="tell_us_data__loaded_files">
+
+
+        </div>
+
+    </section>
+</body>
+
+</html>
