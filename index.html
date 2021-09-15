@@ -11,12 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="main.js"></script>
-    <script>
-        function size() {
-            const selectedFile = document.getElementById('file').files[0];
-            console.log(selectedFile);
-        }
-    </script>
     <title>Веб-сайт</title>
 </head>
 
@@ -50,7 +44,7 @@
 
     <div class="geninfo">
         <div class="main_image">
-            <img src="/img/main_photo.jpg" alt="" class="main_image__photo">
+            <img src="img/main_photo.jpg" alt="" class="main_image__photo">
         </div>
         <div class="geninfo__text">
             <div class="geninf__text__shotrinfo">
@@ -90,11 +84,39 @@
                 </div>
             </div>
         </div>
+        <div class="pink_square">
+            <img src="img/sqare_pink.png" alt="">
+
+        </div>
+        <div class="purple_square">
+            <img src="img/sqaure_purple.png" alt="">
+
+        </div>
     </div>
     <!--General info end-->
 
     <!--Tell Us-->
+
     <section class="tell_us">
+        <div class="tell_us_sqaure_1">
+            <img src="img/top_square.png" alt="">
+        </div>
+        <div class="tell_us_sqaure_2">
+            <img src="img/middle_square.png" alt="">
+        </div>
+        <div class="tell_us_sqaure_3">
+            <img src="img/bottom_sqaure.png" alt="">
+        </div>
+        <div class="tell_us_sqaure_4">
+            <img src="img/top_purle.png" alt="">
+        </div>
+        <div class="tell_us_sqaure_5">
+            <img src="img/right_middle.png" alt="">
+        </div>
+        <div class="tell_us_sqaure_6">
+            <img src="img/right_bot.png" alt="">
+        </div>
+
         <div class="tell_us__header">
             Tell us about yourself
         </div>
@@ -103,13 +125,13 @@
                 <label for="name" class="tell_us_data__form__item__label">
                     Your name
                 </label>
-                <input type="text" class="default_text" id="name" name="user_name" placeholder="Tell us your name">
+                <input type="text" class="default_text" onchange="show_form_2();" id="name_2" name="user_name" placeholder="Tell us your name">
             </div>
             <div class="tell_us_data__form__item">
                 <label for="gender" class="tell_us_data__form__item__label">
                     Your gender
                 </label>
-                <select class=tell_us_data__form__item__gender name="gender">   
+                <select class=tell_us_data__form__item__gender name="gender" id="gender" onchange="show_form_2()">   
                     <option value="not_given"disabled selected>Сhoose Your Gender</option>
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
@@ -117,41 +139,93 @@
             </div>
         </form>
         <form action="" class="tell_us_data__form" method="POST">
-            <div class="tell_us_data__form__item">
+            <div class="tell_us_data__form__item" id="country" pattern="[A-Z],[a-z]">
                 <label for="country" class="tell_us_data__form__item__label">
                    Your country
                 </label>
-                <input type="text" class="default_text" id="country" name="user_country" placeholder="Where are you from?">
+                <input type="text" class="default_text" id="user_country" onchange="show_form_3();" name="user_country" placeholder="Where are you from?">
             </div>
-            <div class="tell_us_data__form__item">
+            <div class="tell_us_data__form__item" id="city">
                 <label for="city" class="tell_us_data__form__item__label">
                    Your city
                 </label>
-                <input type="text" class="default_text" id="city" name="user_city" placeholder="Your native city">
+                <input type="text" class="default_text" id="user_city" name="user_city" onchange="show_form_3();" placeholder="Your native city">
 
             </div>
-            <div class="tell_us_data__form__item">
+            <div class="tell_us_data__form__item" id="birhday">
                 <label for="birhday" class="tell_us_data__form__item__label">
                     Your date of birth
                 </label>
-                <input type="date" class="default_date" id="date" name="user_date" placeholder="dd.mm.yyyy">
+                <input type="date" class="default_date" id="user_date" name="user_date" onchange="show_form_3();" placeholder="dd.mm.yyyy">
             </div>
         </form>
         <form action="" class="tell_us_data__form" method="POST">
-            <div class="tell_us_data__form__documents">
+            <div class="tell_us_data__form__documents" id="document">
                 <label for="file-input">Proof your identity with some documents</label>
                 <label class="tell_us_data__form__documents__label">
                     Add document
-                    <input type="file" id="file"  onchange="size();" name="user_document" />
+                    <input type="file" accept=".png, .gif, .jpg" id="input" onchange="filelist()" name="user_document" multiple >
                 </label>
             </div>
         </form>
-        <div class="tell_us_data__loaded_files">
+        <div class="tell_us_data__loaded_files" id="loaded_files">
+            <div class="send_data_image">
+                <img src="img/Ellipse 4.png" alt="">
+            </div>
+            <div class="file_name_size">
+                <div class="file_name" id="file_name">
+                </div>
+                <div class="file_size" id="file_size">
+                </div>
 
 
+            </div>
+            <div class="delete_object">
+                <img src="img/delete.png" alt="">
+            </div>
         </div>
-
+        <div class="send_information">
+            <button class="send_info" id="send" onclick="send();">
+                Send info
+            </button>
+            <div class="completed" id="completed">
+                <img src="img/galka.png" alt=""> completed
+            </div>
+        </div>
     </section>
+
+    <!--Slider-->
+    <footer>
+        <div class="all">
+            <input checked type="radio" name="respond" id="desktop">
+            <article id="slider">
+                <input checked type="radio" name="slider" id="switch1">
+                <input type="radio" name="slider" id="switch2">
+                <input type="radio" name="slider" id="switch3">
+                <input type="radio" name="slider" id="switch4">
+                <input type="radio" name="slider" id="switch5">
+                <div id="slides">
+                    <div id="overflow">
+                        <div class="image">
+                            <article><img src="img/slider_1.png"></article>
+                            <article><img src="img/slider_2.jpg"></article>
+                            <article><img src="img/slider_3.jpg"></article>
+                        </div>
+                    </div>
+                </div>
+                <div id="controls">
+                    <label for="switch1"></label>
+                    <label for="switch2"></label>
+                    <label for="switch3"></label>
+                </div>
+                <div id="active">
+                    <label for="switch1"></label>
+                    <label for="switch2"></label>
+                    <label for="switch3"></label>
+                </div>
+            </article>
+        </div>
+    </footer>
 </body>
 
 </html>
